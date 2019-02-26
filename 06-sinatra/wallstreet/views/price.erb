@@ -1,0 +1,10 @@
+<p>
+  <strong><%= @stock_symbol.upcase %></strong>
+  closed at
+  <strong>$<%= @price %></strong>
+</p>
+
+<!-- /////////// OR //////////////// -->
+
+<p>The closing price for
+<%= @stock_symbol %> is $<%= @info.close %></p>

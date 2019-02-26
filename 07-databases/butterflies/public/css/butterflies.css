@@ -1,0 +1,20 @@
+body {
+  background-color: blanchedalmond;
+}
+
+.container {
+  max-width: 960px;
+  margin: auto;
+}
+
+nav {
+  text-align: right;
+}
+
+nav a{
+  color: red
+}
+
+.feature {
+  max-width: 100%;
+}

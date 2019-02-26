@@ -1,0 +1,13 @@
+body {
+  background-color: blanchedalmond;
+  color: black;
+}
+
+a {
+  color: red;
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+}

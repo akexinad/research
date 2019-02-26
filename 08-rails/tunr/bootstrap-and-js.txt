@@ -1,0 +1,13 @@
+add bootstrap and jquery-rails to gemfile
+
+comment out the turbolinks gem. turbolinks will interfere with any jquery you would like to add to your project.
+
+make _bootstrap-includes.scss file and write @import 'bootstrap'; in the file
+
+add the following js comments to application.js:
+
+//= require jquery
+//= require popper
+//= require bootstrap
+
+and delete //= require turbolinks

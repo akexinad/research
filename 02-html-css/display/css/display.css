@@ -1,0 +1,52 @@
+body {
+  background-color: yellow;
+}
+
+.box {
+  width: 300px;
+  height: 300px;
+  border: 1px solid black;
+  text-align: center;
+  line-height: 300px;
+}
+
+.block {
+  /* Display block is the default display for most elements. */
+  display: block;
+}
+
+.inline {
+  /* They sit side-by-side, but width and height are ignored. */
+  display: inline;
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+.none {
+  /* Useful if you dont want to show something straight away. Like a GAME OVER alert. */
+  display: none;
+}
+
+.hidden {
+  /* same as hidden but does not rearrange the objects on the screen */
+  visibility: hidden;
+}
+
+/* Below is an example of a child selector */
+.spooky span {
+  color: black;
+  visibility: hidden;
+}
+
+/* Pseudoselector */
+.spooky:hover {
+  background-color: black;
+}
+
+.spooky:hover span {
+  transition: 2s all;
+  color: yellow;
+  visibility: visible;
+}

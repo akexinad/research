@@ -1,0 +1,64 @@
+/*
+//////////// CSS RULE FORMAT //////////////////////////////
+css is made of three parts:
+selector {
+  property: value;
+  other-property: other-value;
+}
+
+
+
+*/
+
+
+body {
+  background-color: limegreen;
+  /* Reset the browser deaults for the border and margin */
+  padding: 10px;
+  margin: 0;
+  color: white;
+}
+
+/* Multiple selector */
+h1, h2, h3, h4, h5, h6 {
+  background-color: white;
+  color: limegreen;
+  text-shadow: 0 0 30px green;
+}
+
+h1 {
+  padding: 35px;
+  text-align: center;
+}
+
+a {
+  color: #d21111;
+}
+
+img {
+  display: block;
+  border: 5px solid black;
+  border-radius: 50px;
+  box-shadow: 0 15px 30px black;
+}
+
+p {
+  font-style: italic;
+}
+
+p.fancy {
+  color: pink;
+  font-style: normal;
+  font-size: 200%;
+}
+
+.box {
+  border: 1px solid black;
+  width: 200px;
+  height: 200px;
+  display: inline-block;
+}
+
+#hero {
+
+}

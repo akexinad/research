@@ -1,0 +1,12 @@
+<% @artists.each do |artist| %>
+  <%= image_tag artist.image, :class => 'thumb' %>
+  <ul>
+    <!-- Writing @artist is the same as writing artist_path(artist.id) -->
+    <li>Name: <%= link_to artist.name, artist_path(artist.id) %></li>
+    <li>Nationality: <%= artist.nationality %></li>
+    <% if artist.birth.present? %>
+      <li>Date of Birth: <%= artist.birth.strftime('%A, %B %e, %Y') %></li>
+    <% end %>
+    <li>Period: <%= artist.period %></li>
+  </ul>
+<% end %>

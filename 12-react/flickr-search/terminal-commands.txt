@@ -1,0 +1,33 @@
+make you directory
+
+$ mkdir flickr-search
+
+go in to you dir and:
+
+$ npm init -y
+
+$ npm install --save-dev webpack webpack-dev-server babel-core babel-loader babel-preset-es2015 babel-preset-env babel-plugin-transform-react-jsx babel-plugin-transform-object-rest-spread
+
+$ atom .
+
+$ touch webpack.config.js
+
+write modules in the webpack files.
+
+and now make and reconfigure files as such.
+
+make sure your json packages file, index.js and App.js are all up to date.
+
+now install preact:
+
+$ npm install preact preact-compat
+
+Below are some extra things you'll need to install to get everything working.
+
+$ npm install --save-dev webpack-cli
+
+$ npm install --save-dev @babel/core
+
+$ rm -rf node_modules/
+
+$ npm install

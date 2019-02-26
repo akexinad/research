@@ -1,0 +1,62 @@
+Gespr:node-books-api akexinad$ npm install -g express-generator
+/Users/akexinad/.npm-packages/bin/express -> /Users/akexinad/.npm-packages/lib/node_modules/express-generator/bin/express-cli.js
++ express-generator@4.16.0
+added 10 packages from 13 contributors in 2.231s
+Gespr:node-books-api akexinad$ express -h
+
+  Usage: express [options] [dir]
+
+
+  Options:
+
+        --version        output the version number
+    -e, --ejs            add ejs engine support
+        --pug            add pug engine support
+        --hbs            add handlebars engine support
+    -H, --hogan          add hogan.js engine support
+    -v, --view <engine>  add view <engine> support (dust|ejs|hbs|hjs|jade|pug|twig|vash) (defaults to jade)
+        --no-view        use static html instead of view engine
+    -c, --css <engine>   add stylesheet <engine> support (less|stylus|compass|sass) (defaults to plain css)
+        --git            add .gitignore
+    -f, --force          force on non-empty directory
+    -h, --help           output usage information
+Gespr:node-books-api akexinad$ cd ..
+Gespr:17-node akexinad$ express -e express-generator-demo
+
+  warning: option `--ejs' has been renamed to `--view=ejs'
+
+
+   create : express-generator-demo/
+   create : express-generator-demo/public/
+   create : express-generator-demo/public/javascripts/
+   create : express-generator-demo/public/images/
+   create : express-generator-demo/public/stylesheets/
+   create : express-generator-demo/public/stylesheets/style.css
+   create : express-generator-demo/routes/
+   create : express-generator-demo/routes/index.js
+   create : express-generator-demo/routes/users.js
+   create : express-generator-demo/views/
+   create : express-generator-demo/views/error.ejs
+   create : express-generator-demo/views/index.ejs
+   create : express-generator-demo/app.js
+   create : express-generator-demo/package.json
+   create : express-generator-demo/bin/
+   create : express-generator-demo/bin/www
+
+   change directory:
+     $ cd express-generator-demo
+
+   install dependencies:
+     $ npm install
+
+   run the app:
+     $ DEBUG=express-generator-demo:* npm start
+
+Gespr:17-node akexinad$ cd express-
+-bash: cd: express-: No such file or directory
+Gespr:17-node akexinad$ cd express-generator-demo/
+Gespr:express-generator-demo akexinad$ atom .
+Gespr:express-generator-demo akexinad$ npm install
+npm notice created a lockfile as package-lock.json. You should commit this file.
+added 53 packages from 38 contributors and audited 141 packages in 3.551s
+found 0 vulnerabilities

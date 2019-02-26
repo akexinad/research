@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed|Roboto+Mono');
+
+
+* {
+  /* border: 1px solid green; */
+}
+
+
+
+body {
+  background-color: #222222; /* #222 is the same as #222222 */
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+
+.container {
+  max-width: 960px; /* This will wrap text on screens smaller than 960px so you do not have to horizontally scroll */
+  margin: 0 auto;
+  background-color: #ccc;
+  padding: 1em; /* em refers to the pixel size of a letter m in the current font */
+  border-bottom-left-radius: 1em;
+  border-bottom-right-radius: 1em;
+}
+
+nav {
+  text-align: right;
+}
+
+nav a {
+  color: green;
+}
+
+h1, h2, h3 {
+  font-family: 'Roboto Mono', monospace;
+}
+
+h1 {
+  text-align: center;
+  background-color: #222;
+  color: #ccc;
+  padding: 1em;
+}
+
+
+/* You can use ratios here as a percentage of the entire container so you do not have to play with pixels */
+main {
+  display: inline-block;
+  width: 75%;
+}
+
+/* Images are displayed in line by nature therefore you cannot alter the margin. First you need to display to block and then alter the margin. */
+main img {
+  margin: 0 auto;
+  display: block;
+}
+
+aside {
+  display: inline-block;
+  width: 21%;
+  vertical-align: top;
+  background-color: #cfc;
+  padding: 1em;
+  border-radius: .5em;
+  box-shadow: 0 0 15px #222;
+}
+/*
+aside h3 {
+  text-align: center;
+} */
+
+aside ul {
+  padding-left: 17px;
+}

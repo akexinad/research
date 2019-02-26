@@ -1,0 +1,79 @@
+// Place all the styles related to the Pages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+// variables are values
+$brand-color: #ccc;
+$centered: 0 auto;
+
+// mixins are for properties and values
+@mixin colouredBG {
+  background-color: $brand-color;
+}
+
+@mixin greyItalic {
+  color: grey;
+  font-style: italic;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  @include colouredBG;
+}
+
+h1 {
+  text-align: center;
+}
+
+.post {
+  max-width: 960px;
+  margin: $centered;
+  margin-bottom: 3em;
+  padding: 1em;
+  border-bottom: 1px solid black;
+  background-color: white;
+  box-shadow: 0 0 10px black;
+  border-radius: 0.5em;
+
+  // any h2 nested in post will adopt the .post attributes
+  h2 {
+    @include greyItalic;
+  }
+
+  h3.author {
+    text-align: right;
+  }
+
+  .content {
+    border: 1px solid $brand-color;
+    padding: 1em;
+    border-radius: 0.5em;
+
+    // p is nested in content, and content is nested in post
+    p {
+      font-size: 120%;
+      letter-spacing: 1px;
+    } // p
+  } // content
+} // post
+
+.notification {
+  border: 1px solid black;
+  border-radius: 0.5em;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.8);
+  color: blue;
+  padding: 1em;
+  font-size: 150%;
+}
+
+.error {
+  @extend .notification; // inheriting all the stuff notification has.
+  color: red;
+}
+
+.success {
+  @extend .notification;
+  color: green;
+}

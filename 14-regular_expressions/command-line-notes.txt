@@ -1,0 +1,106 @@
+Last login: Mon Feb 18 09:16:50 on ttys000
+Gespr:Desktop akexinad$ pry
+[1] pry(main)> "some string"
+=> "some string"
+[2] pry(main)> 'disregard the quotes'
+=> "disregard the quotes"
+[3] pry(main)> /pattern/
+=> /pattern/
+[4] pry(main)> regex = /pattern/
+=> /pattern/
+[5] pry(main)> regex
+=> /pattern/
+[6] pry(main)> "fool" == /oo/
+=> false
+[7] pry(main)> "fool" =~ /oo/
+=> 1
+[8] pry(main)> # the number represents the index of where the match occurs
+[9] pry(main)> "another fool" =~ /oo/
+=> 9
+[10] pry(main)> "oo" =~ /oo/
+=> 0
+[11] pry(main)> "no match" =~ /oo/
+=> nil
+[12] pry(main)> /AUD/ =~ "And AUD closes at 1.45"
+=> 4
+[13] pry(main)> "Mr G Barnes" =~ /Barnes/
+=> 5
+[14] pry(main)> "And AUD closes at 1.45".include? "AUD"
+=> true
+[15] pry(main)> "And AUD closes at 1.45".index "AUD"
+=> 4
+[16] pry(main)> # What makes regex interesting is META CHARACTERS
+[17] pry(main)> /bet.y/ =~ "betty"
+=> 0
+[18] pry(main)> /bet.y/ =~ "betsy"
+=> 0
+[19] pry(main)> /bet.y/ =~ "betjy"
+=> 0
+[20] pry(main)> /bet.y/ =~ "betxy"
+=> 0
+[21] pry(main)> /bet.y/ =~ "bet!2988xwdyclwvd73e73''';y"
+=> nil
+[22] pry(main)> /bet.y/ =~ "bet!2988xwdyclwvd73e7y"
+=> nil
+[23] pry(main)> /bet.y/ =~ "bet!y"
+=> 0
+[24] pry(main)> /bet..y/ =~ "bet!!y"
+=> 0
+[25] pry(main)> /bet...y/ =~ "bet!1sy"
+=> 0
+[26] pry(main)> /bet....y/ =~ "bet!1s;y"
+=> 0
+[27] pry(main)> # Quantifiers tell you how often something occurs
+[28] pry(main)> # ? = 1 time
+[29] pry(main)> # + = 1 or more
+[30] pry(main)> # * = 0 or more
+[31] pry(main)> /.*/ =~ ""
+=> 0
+[32] pry(main)> # the above example would match everything
+[33] pry(main)> "fred and barney" =~ /fred.*barney/
+=> 0
+[34] pry(main)> # /.*/ is called the  any old junk matcher
+[35] pry(main)> "fred and124248708397&^!E(&*^#(&*^JHGHVKCLWHDC barney" =~ /fred.*barney/
+=> 0
+[36] pry(main)> "fred and124248708397&^!E(&*^#(&*^JHGHVKCLWHDC barney" =~ /fred.*gerry/
+=> nil
+[37] pry(main)> # The + Quantifier
+[38] pry(main)> "fred-barney" =~ /fred-+barney/
+=> 0
+[39] pry(main)> "fred--------------------------barney" =~ /fred-+barney/
+=> 0
+[40] pry(main)> "fredbarney" =~ /fred-+barney/
+=> nil
+[41] pry(main)> # The ? Quantifier
+[42] pry(main)> "fredbarney" =~ /fred-?barney/
+=> 0
+[43] pry(main)> "fred-barney" =~ /fred-?barney/
+=> 0
+[44] pry(main)> "fred-dvebarney" =~ /fred-?barney/
+=> nil
+[45] pry(main)> # ? is for 0 or 1
+[46] pry(main)> # Grouping uses parentheses
+[47] pry(main)> # Grouping uses parentheses as metacharacters
+[48] pry(main)> /(fred|barney)/ =~ "fred"
+=> 0
+[49] pry(main)> /(fred|barney)/ =~ "barney"
+=> 0
+[50] pry(main)> /(fred|barney)/ =~ "barney and also fred"
+=> 0
+[51] pry(main)> /(fred|barney)/ =~ "barney and also fred and then barney again"
+=> 0
+[52] pry(main)> /(fred|barney)/ =~ "1283r281vqlef"
+=> nil
+[53] pry(main)> /fred|barney|wilma/ =~ "the lovely wilma"
+=> 11
+[54] pry(main)> # Detecting limited options
+[55] pry(main)> /[]reg/
+SyntaxError: (eval):2: empty char-class: /[]reg/
+[55] pry(main)> # [] gives a character class
+[56] pry(main)> /[Gg]reg/ =~ "Greg"
+=> 0
+[57] pry(main)> /[Gg]reg/ =~ "greg"
+=> 0
+[58] pry(main)> /[Gg]reg/ =~ "Wreg"
+=> nil
+[59] pry(main)> /[Gg]reg/ =~ "Here we find Greg"

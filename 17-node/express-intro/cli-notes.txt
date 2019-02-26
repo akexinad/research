@@ -1,0 +1,97 @@
+Gespr:~ akexinad$ cd Desktop/17-node/
+
+Gespr:17-node akexinad$ mkdir express-intro
+
+Gespr:17-node akexinad$ cd express-intro/
+
+Gespr:express-intro akexinad$ npm init -y
+
+Wrote to /Users/akexinad/Desktop/17-node/express-intro/package.json:
+
+{
+  "name": "express-intro",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
+
+
+Gespr:express-intro akexinad$ npm install express
+
+npm notice created a lockfile as package-lock.json. You should commit this file.
+npm WARN express-intro@1.0.0 No description
+npm WARN express-intro@1.0.0 No repository field.
+
++ express@4.16.4
+added 48 packages from 36 contributors and audited 121 packages in 3.43s
+found 0 vulnerabilities
+
+
+
+   ╭───────────────────────────────────────────────────────────────╮
+   │                                                               │
+   │       New minor version of npm available! 6.4.1 → 6.8.0       │
+   │   Changelog: https://github.com/npm/cli/releases/tag/v6.8.0   │
+   │               Run npm install -g npm to update!               │
+   │                                                               │
+   ╰───────────────────────────────────────────────────────────────╯
+
+Gespr:express-intro akexinad$ touch cli-notes.txt
+
+Gespr:express-intro akexinad$ touch index.js
+
+Gespr:express-intro akexinad$ ls -l
+
+total 40
+-rw-r--r--   1 akexinad  staff      0 21 Feb 10:25 cli-notes.txt
+-rw-r--r--   1 akexinad  staff      0 21 Feb 10:25 index.js
+drwxr-xr-x  51 akexinad  staff   1632 21 Feb 10:25 node_modules
+-rw-r--r--   1 akexinad  staff  13101 21 Feb 10:25 package-lock.json
+-rw-r--r--   1 akexinad  staff    277 21 Feb 10:25 package.json
+
+67 directories, 307 files
+Gespr:express-intro akexinad$ atom .
+
+espr:express-intro akexinad$ npm install -g nodemon
+/Users/akexinad/.npm-packages/bin/nodemon -> /Users/akexinad/.npm-packages/lib/node_modules/nodemon/bin/nodemon.js
+
+> fsevents@1.2.7 install /Users/akexinad/.npm-packages/lib/node_modules/nodemon/node_modules/fsevents
+> node install
+
+node-pre-gyp WARN Using needle for node-pre-gyp https download
+[fsevents] Success: "/Users/akexinad/.npm-packages/lib/node_modules/nodemon/node_modules/fsevents/lib/binding/Release/node-v64-darwin-x64/fse.node" is installed via remote
+
+> nodemon@1.18.10 postinstall /Users/akexinad/.npm-packages/lib/node_modules/nodemon
+> node bin/postinstall || exit 0
+
+Love nodemon? You can now support the project via the open collective:
+ > https://opencollective.com/nodemon/donate
+
++ nodemon@1.18.10
+added 291 packages from 145 contributors in 11.248s
+
+Gespr:express-intro akexinad$ npm install ejs
+
+npm WARN express-intro@1.0.0 No description
+npm WARN express-intro@1.0.0 No repository field.
+
++ ejs@2.6.1
+added 1 package from 2 contributors and audited 122 packages in 1.467s
+found 0 vulnerabilities
+
+Gespr:express-intro akexinad$ npm install underscore
+
+Gespr:node-books-api akexinad$ npm install axios
+
+npm WARN node-books-api@1.0.0 No description
+npm WARN node-books-api@1.0.0 No repository field.
+
++ axios@0.18.0
+added 5 packages from 8 contributors and audited 128 packages in 1.818s
+found 0 vulnerabilities

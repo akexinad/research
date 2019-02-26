@@ -1,0 +1,30 @@
+/* ///////////////////////////////////////////////////// */
+
+/* THIS WILL TURN ON NEW BOX MODEL FOR ALL ELEMENTS
+
+* {
+  box-sizing: border-box;
+}
+
+/* ////////////////////////////////////////////////////////////
+
+
+body {
+  background-color: pink;
+}
+
+/* WHen you play with padding and border. It alters the shape of the box. Very annoying. So if you add 50px of paddding you ll need to minus 50px from the box size to keep a box of 300*300 */
+.old {
+  width: 300px;
+  height: 300px;
+  border: 1px solid black;
+  padding: 50px;
+}
+
+.new {
+  box-sizing: border-box;
+  width: 300px;
+  height: 300px;
+  border: 30px solid black;
+  padding: 50px;
+}

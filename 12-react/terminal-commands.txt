@@ -1,0 +1,5 @@
+alias crapp=create-react-app
+
+rm -rf node_modules/ .git
+
+npm run start
