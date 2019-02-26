@@ -37,6 +37,7 @@ class SinglyLinkedList
     node = @head
     @head = @head.next
     node.value
+    # nil unless !node.value.nil?
   end
 
   # TODO
@@ -72,8 +73,8 @@ end
 bros = SinglyLinkedList.new 'Groucho'
 bros.append 'Harpo'
 bros.append 'Gummo'
-bros.append 'Chico'
-bros.append 'Zeppo'
+# bros.append 'Chico'
+# bros.append 'Zeppo'
 
 require 'pry'
 binding.pry
