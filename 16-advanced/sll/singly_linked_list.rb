@@ -33,7 +33,6 @@ class SinglyLinkedList
 
   def remove # AKA shift
     # TODO: Return nil where there are no nodes left
-
     node = @head
     if @head.nil?
       return nil
@@ -44,10 +43,39 @@ class SinglyLinkedList
   end
 
   # TODO
-  def insert_after(node, new_value)
+  def insert_after(index, new_value)
+    node = @head
 
-
+    return false if !node.next
+    return index if node.value == index
+    while (index = node.next)
+      if node.value == value
+        node.next = Node.new value
+      end
+    end
   end
+
+#############################
+
+#     node = @head
+#     return false if !node.next
+#     return node  if node.value == value
+#     while (node = node.next)
+#       return node if node.value == value
+#     end
+
+  def test value
+    node = @head
+
+    return false if !node.next
+    return node if node.value == value
+
+    while (node = node.next)
+      return node if node.value == value
+    end
+  end
+
+#############################
 
   # TODO
   def find(needle)
@@ -77,8 +105,8 @@ end
 bros = SinglyLinkedList.new 'Groucho'
 bros.append 'Harpo'
 bros.append 'Gummo'
-# bros.append 'Chico'
-# bros.append 'Zeppo'
+bros.append 'Chico'
+bros.append 'Zeppo'
 
 require 'pry'
 binding.pry
