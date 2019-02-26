@@ -1,0 +1,11 @@
+bros = SinglyLinkedList.new 'Groucho'
+bros.append 'Harpo'
+bros.append 'Gummo'
+
+////////////////////////////
+
+bros.head.value = 'Groucho';
+
+after removing Groucho:
+
+bros.head.value = 'Harpo';

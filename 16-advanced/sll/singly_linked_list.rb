@@ -10,7 +10,7 @@ class SinglyLinkedList
 
   attr_accessor :head
   def initialize(value=nil)
-    @head= Node.new(value) unless value.nil?
+    @head = Node.new(value) unless value.nil?
   end
 
   def prepend(value) #AKA unshift method
@@ -35,13 +35,17 @@ class SinglyLinkedList
     # TODO: Return nil where there are no nodes left
 
     node = @head
-    @head = @head.next
-    node.value
-    # nil unless !node.value.nil?
+    if @head.nil?
+      return nil
+    else
+      @head = @head.next
+      node.value
+    end
   end
 
   # TODO
   def insert_after(node, new_value)
+
 
   end
 
