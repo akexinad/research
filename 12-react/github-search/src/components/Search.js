@@ -39,7 +39,7 @@ export default class Search extends Component {
             onChange={ this._handleChange }
             value={ this.state.username }
           />
-          <button>Search for user</button>
+          <button>Search for { this.state.username }</button>
         </form>
       </div>
     );
