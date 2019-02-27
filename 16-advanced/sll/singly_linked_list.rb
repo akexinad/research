@@ -1,4 +1,7 @@
 class SinglyLinkedList
+
+  include Enumerable # THIS IS CALLED A MIXIN. Kind of like mutiple inheritance. THIS DEPENDS ON HAVING AN EACH METHOD. OR ELSE THE METHODS INHERITED FROM ENUMERABLE WONT WORK.
+
   class Node
     attr_accessor :value, :next
 
@@ -55,28 +58,6 @@ class SinglyLinkedList
     end
   end
 
-#############################
-
-#     node = @head
-#     return false if !node.next
-#     return node  if node.value == value
-#     while (node = node.next)
-#       return node if node.value == value
-#     end
-
-  def test value
-    node = @head
-
-    return false if !node.next
-    return node if node.value == value
-
-    while (node = node.next)
-      return node if node.value == value
-    end
-  end
-
-#############################
-
   # TODO
   def find(needle)
     # return the node with a value of needle, or nil
@@ -85,16 +66,28 @@ class SinglyLinkedList
   # TODO: tricky
   def reverse
     #return a new singly linked list with the nodes in reverse order
+    reverse_list = SinglyLinkedList.new
+    node = @head # init
+    while node # conditional
+      reverse_list.prepend(node.value)
+      node = node.next # update
+    end
+    reverse_list
   end
 
   # TODO: tricker
   def reverse!
     # destructive reverse, it doesn't return a new list, it will return the original list modified.
+    @head = self.reverse.head
   end
 
   # TODO: tricky -- how do you accept/ivoke a block
-  def each
-
+  def each()
+    node = @head
+    while node
+      yield(node.value) if block_given? # JS would say we are executing a callback function.
+      node = node.next
+    end
   end
 
   # .map .reduce and so on.
