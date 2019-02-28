@@ -1,0 +1,11 @@
+path {
+  /* stroke: red; */
+  stroke-dasharray: 9243.548828125;
+  stroke-dashoffset: 9243.548828125;
+  transition: all 10s;
+}
+
+svg:hover path {
+  stroke-dashoffset: 0;
+
+}

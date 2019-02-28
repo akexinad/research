@@ -1,3 +1,5 @@
+let count = 0;
+
 function createRenderer() {
   // Where will the user see the 3d world
   const renderer = new THREE.WebGLRenderer();
@@ -6,6 +8,7 @@ function createRenderer() {
   // Set the beackground color
   renderer.setClearColor("#16161d"); // Eigengrau
   renderer.shadowMap.enabled = true;
+  renderer.setPixelRatio(window.devicePixelRatio); // For Retina screens
   const output = document.querySelector("#output");
   output.appendChild(renderer.domElement);
   // console.log(renderer);
@@ -82,6 +85,8 @@ function createLight() {
   pointLight.position.x = 4;
   pointLight.position.y = 18;
   pointLight.castShadow = true;
+  pointLight.shadow.mapSize.width = 2048;
+  pointLight.shadow.mapSize.height = 2048;
   return pointLight;
 }
 
@@ -90,12 +95,16 @@ function createLightHelper(light) {
   return helper;
 }
 
+function addOrbitControls(camera, renderer) {
+  // console.log(camera, renderer);
+  new THREE.OrbitControls(camera, renderer.domElement);
+}
+
 const renderer = createRenderer();
 const scene = createScene();
 const camera = createCamera(scene);
 const axes = createAxesHelper();
 const floor = createFloor()
-
 const cube = createCube({
   width: 4,
   height: 4,
@@ -111,4 +120,25 @@ const lightHelper = createLightHelper(light);
 
 scene.add(axes, floor, cube, sphere, light, lightHelper);
 
-renderer.render(scene, camera);
+addOrbitControls(camera, renderer)
+
+// renderer.render(scene, camera);
+
+function animate() {
+  count += 0.1;
+  sphere.position.x = Math.cos(count) * 10 + 18;
+  sphere.position.y = Math.abs(Math.sin(count)) * 10 + 4;
+
+  cube.position.x = Math.sin(count) * 10;
+  cube.position.y = Math.abs(Math.cos(count)) * 10;
+
+  // console.log("animate was called");
+  // cube.rotation.x += 0.1;
+  // cube.rotation.y += 0.1;
+  // cube.rotation.z += 0.1;
+
+  renderer.render(scene, camera);
+  // requestAnimationFrame(animate);
+}
+
+animate();
