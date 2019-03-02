@@ -8,7 +8,7 @@ import Profile from './components/Profile.js';
 
 import './index.css';
 
-// : in the rout means that it is dynamic
+// the ':' in the route means that it is dynamic
 
 const Routes = (
   <Router>
