@@ -1,0 +1,13 @@
+body {
+  text-align: center;
+  font-family: courier, monospace;
+}
+
+.info, .repos {
+  text-align: left;
+  display: inline-block;
+  max-width: 50%;
+  border: 1px solid black;
+  padding: 1em;
+  vertical-align: top;
+}

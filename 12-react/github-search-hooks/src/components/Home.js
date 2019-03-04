@@ -1,15 +1,9 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
-import Clickr from './Clickr.js'
 
-export default class Home extends Component {
+export default (props) => {
 
-  constructor() {
-    super();
-    this._randomUser = this._randomUser.bind(this);
-  }
-
-  _randomUser() {
+  const _randomUser = () => {
     const names = [
       "liaa2",
       "WilliamDGH",
@@ -38,18 +32,16 @@ export default class Home extends Component {
     const index = Math.floor(Math.random() * names.length);
     const username = names[index];
     this.props.history.push(`/details/${ username }`);
-  }
+  };
 
-  render() {
-    return (
-      <div className="home">
-        <h1>GitHub Search</h1>
-        <Link to="/search">
-          <button>Search for a user</button>
-        </Link>
-        <button onClick={ this._randomUser }>Random user</button>
-        <Clickr />
-      </div>
-    );
-  }
+
+  return (
+    <div className="home">
+      <h1>GitHub Search</h1>
+      <Link to="/search">
+        <button>Search for a user</button>
+      </Link>
+      <button onClick={ _randomUser }>Random user</button>
+    </div>
+  );
 }
