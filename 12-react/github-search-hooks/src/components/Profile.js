@@ -1,61 +1,44 @@
-import React, { Component } from 'react';
+import React, { useState, useEffect } from 'react';
 import Github from '../utils.js';
 
-export default class Profile extends Component {
-  constructor() {
-    super();
-    this.state = {
-      user: null,
-      repos: null,
-    };
-  }
+const RUN_ONCE = [];
 
-  // this function automatically fires when you enter the page
-  componentDidMount() {
-    // console.log('componentDidMount');
+export default (props) => {
 
-    // XXX: Find the user name.
-    // XXX: fetch the user Info.
-    // XXX: .then save the response in our state
-    const username = this.props.match.params.username;
-    Github.getUserInfo(username)
-      .then( (result) => {
-        console.log(result.data);
-        this.setState({
-          user: result.data,
-        })
-      });
+  const [user, setUser] = useState(null);
+  const [repos, setRepos] = useState(null);
+  const [dataLoaded, dataLoadedComplete] = useState(false);
 
-    Github.getUserRepos(username)
-      .then( (result) => {
-        // console.log(result);
-        this.setState({
-          repos: result.data,
-        })
-      });
-  }
+  useEffect( () => {
 
-  // this function automatically fires when you leave the page
-  componentWillUnmount() {
-    console.log('componentWillUnmount');
-  }
+    const username = props.match.params.username;
 
-  render() {
-    return (
-      // <h2>{ this.props.match.params.username } Coming Soon</h2>
-      <div className="profile">
-        <h2>GitHub User Details</h2>
+    Github.getUserInfo(username).then( result => {
+      setUser(result.data);
+    });
 
-        <UserInfo
-          user={ this.state.user }
-        />
+    Github.getUserRepos(username).then( result => {
+      setRepos(result.data);
+    })
 
-        <Repositories
-          repos={ this.state.repos }
-        />
-      </div>
-    );
-  }
+
+  }, RUN_ONCE);  // The empty array causes the useEffect callback to only run once. Magic.
+
+
+
+  return (
+    <div className="profile">
+      <h2>GitHub User Details</h2>
+
+      <UserInfo
+        user={ user }
+      />
+
+      <Repositories
+        repos={ repos }
+      />
+    </div>
+  )
 }
 
 const UserInfo = (props) => {
